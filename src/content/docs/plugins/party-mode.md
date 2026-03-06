@@ -124,6 +124,7 @@ Guests are automatically redirected here after scanning the QR code.
 - Current queue display with position indicators
 - Token counters showing remaining requests
 - "Request" and "Boost" badges on songs they've added
+- **Skip button** - When enabled by the host, guests can skip the currently playing song. The button appears next to the "Current Queue" header with a token counter showing remaining skips. Once tokens are used, a countdown timer shows when the next skip becomes available
 
 ![Guest View - Search](../../../assets/screenshots/party-mode/party-mode-guest-view-search.png)
 
