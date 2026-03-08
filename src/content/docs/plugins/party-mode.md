@@ -15,7 +15,7 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 - **Mobile-Optimized Guest View** - Clean, touch-friendly interface designed for phones
 - **Search & Request Songs** - Guests can search your music library and streaming services
 - **Configurable Rate Limiting** - Token-based system prevents queue flooding
-- **Party Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
+- **Party Mode Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
 - **Remote Access Support** - Works with Music Assistant's remote access so guests don't even need to be connected to your local network or wifi
 
 ## How It Works
@@ -24,7 +24,7 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 
 1. Enable the Party Mode plugin in Music Assistant settings
 2. Configure which player will be used for party mode
-3. Navigate to Party Mode (`/party`) to display the QR code and current queue
+3. Navigate to the Party Mode Dashboard (`/party`) to display the QR code and current queue
 4. Optionally display this on a TV or dedicated screen
 
 ### For Guests
@@ -43,7 +43,7 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 
 | Setting | Description |
 |---------|-------------|
-| **Enable Guest Access** | Master toggle for the entire feature. When disabled, all guest tokens are revoked. |
+| **Enable Guest Access** | Master toggle for the entire feature. When disabled, all active guest sessions are immediately destroyed and guests will need to re-scan the QR code when re-enabled. |
 | **Party Mode Player** | Select which player/queue receives guest requests. If not set, uses the active player. |
 | **Album Art Background** | Display blurred album art or a solid color as the background. |
 | **Show Player Controls** | Show playback controls in the party view. Disable for a clean "digital signage" look. |
@@ -95,7 +95,7 @@ Customize the colors of badges shown on guest-requested songs in the queue:
 
 ## User Interface
 
-### Party View (Host Dashboard)
+### Party Mode Dashboard
 
 Access via `/party` in the Music Assistant interface. This view is designed for display on a TV or monitor at your party.
 
@@ -106,9 +106,6 @@ Access via `/party` in the Music Assistant interface. This view is designed for 
 - Guest request badges visible on queue items
 - Optional album art background with blur effect
 - Optional player controls for the host
-
-!!! tip "Clean Display Mode"
-    For a completely frameless dashboard without side navigation, enable **Force Mobile View** in Settings → User Interface. This removes all navigation elements, leaving only the party view content - perfect for dedicated displays or kiosk mode.
 
 ![Party Mode Dashboard with Boost](../../../assets/screenshots/party-mode/party-mode-dashboard-boost.png)
 
@@ -142,11 +139,11 @@ When remote access is disabled, guests must be on the same network as your Music
 - The guest user shares a single "guest" account - individual guest tracking is not available
 - When the plugin is disabled or removed, all active guest sessions are immediately revoked
 - Rate limiting tokens are stored in the guest's browser - clearing browser data resets their limits
-- The party view works best on landscape displays; the guest view is optimized for portrait (mobile)
+- The Party Mode Dashboard works best on landscape displays; the guest view is optimized for portrait (mobile)
 
 ## Tips for Hosting
 
-1. **Display the Party View** - Use a spare tablet, TV, or monitor to show the QR code and queue
+1. **Display the Party Mode Dashboard** - Use a spare tablet, TV, or monitor to show the QR code and queue
 2. **Pre-populate the queue** - Add some songs before guests arrive to set the mood
 3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
 4. **Use a dedicated player** - Configure a specific player for party mode to avoid conflicts with other rooms
