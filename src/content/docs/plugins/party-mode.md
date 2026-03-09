@@ -32,8 +32,9 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 1. Scan the QR code with a phone camera
 2. The guest view opens automatically in a browser
 3. Search for songs by name or artist
-4. Tap "Add" to add to the queue, or "Boost" to play sooner
-5. View the current queue and see when their songs will play
+4. Tap a song to reveal actions, then tap "Request" to add to the queue or "Boost" to play sooner
+5. Tap an upcoming song in the queue to boost it higher
+6. View the current queue and see when their songs will play
 
 ![Guest View - Queue](../../../assets/screenshots/party-mode/party-mode-guest-view-queue.png)
 
@@ -74,7 +75,7 @@ Rate limiting uses a "token bucket" system. Each guest has a pool of tokens that
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| **Allow Boost** | On | Let guests boost songs to play next (queue jumping) |
+| **Allow Boost** | On | Let guests boost songs to play next (queue jumping). Guests can boost from search results or tap an upcoming queue item to boost it higher. |
 | **Token Limit** | 3 | How many "Boost" requests before waiting |
 | **Refill Rate** | 20 min | Time to regenerate one token |
 
@@ -101,11 +102,12 @@ Access via `/party` in the Music Assistant interface. This view is designed for 
 
 **Features:**
 
-- Large QR code for easy scanning
+- Large QR code for easy scanning (click to copy the party URL to clipboard)
 - Animated track stack showing previous, current, and upcoming songs
 - Guest request badges visible on queue items
 - Optional album art background with blur effect
 - Optional player controls for the host
+- Access error display when the configured player is not available
 
 ![Party Mode Dashboard with Boost](../../../assets/screenshots/party-mode/party-mode-dashboard-boost.png)
 
@@ -117,8 +119,10 @@ Guests are automatically redirected here after scanning the QR code.
 
 - Search bar with filter chips (All / Songs / Artists)
 - Smart search ranking using relevance and popularity
+- Tap-to-expand interaction — tap a track in search results to reveal "Request" and "Boost" action buttons
 - Artist drill-down to browse an artist's tracks
 - Current queue display with position indicators
+- Tap upcoming queue items to boost them higher in the queue
 - Token counters showing remaining requests
 - "Request" and "Boost" badges on songs they've added
 - **Skip button** - When enabled by the host, guests can skip the currently playing song. The button appears next to the "Current Queue" header with a token counter showing remaining skips. Once tokens are used, a countdown timer shows when the next skip becomes available
