@@ -16,6 +16,8 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 - **Search & Request Songs** - Guests can search your music library and streaming services
 - **Configurable Rate Limiting** - Token-based system prevents queue flooding
 - **Party Mode Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
+- **Lyrics Display** - Show synchronized lyrics on the dashboard alongside the QR code
+- **Karaoke Mode** - Prioritize lyrics front-and-center for a karaoke-style experience
 - **Remote Access Support** - Works with Music Assistant's remote access so guests don't even need to be connected to your local network or wifi
 
 ## How It Works
@@ -48,6 +50,8 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 | **Party Mode Player** | Select which player/queue receives guest requests. If not set, uses the active player. |
 | **Album Art Background** | Display blurred album art or a solid color as the background. |
 | **Show Player Controls** | Show playback controls in the party view. Disable for a clean "digital signage" look. |
+| **Display Lyrics** | Show synchronized lyrics on the party mode dashboard alongside the QR code. When synced (LRC) lyrics are available, they scroll in time with the music. Hidden on mobile-sized screens in normal mode. |
+| **Karaoke Mode** | When enabled (requires Display Lyrics), lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. |
 
 ### QR Code Settings
 
@@ -107,6 +111,8 @@ Access via `/party` in the Music Assistant interface. This view is designed for 
 - Guest request badges visible on queue items
 - Optional album art background with blur effect
 - Optional player controls for the host
+- Optional synchronized lyrics display alongside the QR code
+- **Karaoke Mode** - A dedicated layout that puts lyrics front-and-center with the track stack minimized at the bottom and the QR code in the top-left corner. Great for sing-along parties!
 - Access error display when the configured player is not available
 
 ![Party Mode Dashboard with Boost](../../../assets/screenshots/party-mode/party-mode-dashboard-boost.png)
@@ -152,3 +158,4 @@ When remote access is disabled, guests must be on the same network as your Music
 3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
 4. **Use a dedicated player** - Configure a specific player for party mode to avoid conflicts with other rooms
 5. **Enable remote access** - If some guests might be on cellular data, enable remote access so the QR code works for everyone
+6. **Enable Karaoke Mode** - For sing-along parties, turn on Display Lyrics and Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
