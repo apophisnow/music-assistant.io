@@ -1,13 +1,13 @@
 ---
-title: Party Mode Plugin
-description: Features and configuration for the Party Mode Plugin
+title: Party Plugin
+description: Features and configuration for the Party Plugin
 ---
 
-# Party Mode Plugin
+# Party Plugin
 
-Party Mode lets your guests add their favorite songs to the queue just by scanning a QR code, no logins or accounts needed! Just display the party mode dashboard on a TV or device of your choice. Guests have a dedicated UI page with no access to your system controls. With optional rate limits you can keep things fair.
+The Party plugin lets your guests add their favorite songs to the queue just by scanning a QR code, no logins or accounts needed! Just display the party dashboard on a TV or device of your choice. Guests have a dedicated UI page with no access to your system controls. With optional rate limits you can keep things fair.
 
-![Party Mode Dashboard](../../../assets/screenshots/party-mode/party-mode-dashboard.png)
+![Party Dashboard](../../../assets/screenshots/party/party-dashboard.png)
 
 ## Features
 
@@ -15,7 +15,7 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 - **Mobile-Optimized Guest View** - Clean, touch-friendly interface designed for phones
 - **Search & Request Songs** - Guests can search your music library and streaming services
 - **Configurable Rate Limiting** - Token-based system prevents queue flooding
-- **Party Mode Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
+- **Party Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
 - **Lyrics Display** - Show synchronized lyrics on the dashboard alongside the QR code
 - **Karaoke Mode** - Prioritize lyrics front-and-center for a karaoke-style experience
 - **Remote Access Support** - Works with Music Assistant's remote access so guests don't even need to be connected to your local network or wifi
@@ -24,9 +24,9 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 
 ### For the Host
 
-1. Enable the Party Mode plugin in Music Assistant settings
-2. Configure which player will be used for party mode
-3. Navigate to the Party Mode Dashboard (`/party`) to display the QR code and current queue
+1. Enable the Party plugin in Music Assistant settings
+2. Configure which player will be used for party
+3. Navigate to the Party Dashboard (`/party`) to display the QR code and current queue
 4. Optionally display this on a TV or dedicated screen
 
 ### For Guests
@@ -38,7 +38,7 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 5. Tap an upcoming song in the queue to boost it higher
 6. View the current queue and see when their songs will play
 
-![Guest View - Queue](../../../assets/screenshots/party-mode/party-mode-guest-view-queue.png)
+![Guest View - Queue](../../../assets/screenshots/party/party-guest-view-queue.png)
 
 ## Configuration
 
@@ -47,11 +47,12 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 | Setting | Description |
 |---------|-------------|
 | **Enable Guest Access** | Master toggle for the entire feature. When disabled, all active guest sessions are immediately destroyed and guests will need to re-scan the QR code when re-enabled. |
-| **Party Mode Player** | Select which player/queue receives guest requests. If not set, uses the active player. |
+| **Party Player** | Select which player/queue receives guest requests. If not set, uses the active player. |
 | **Album Art Background** | Display blurred album art or a solid color as the background. |
 | **Show Player Controls** | Show playback controls in the party view. Disable for a clean "digital signage" look. |
-| **Display Lyrics** | Show synchronized lyrics on the party mode dashboard alongside the QR code. When synced (LRC) lyrics are available, they scroll in time with the music. Hidden on mobile-sized screens in normal mode. |
+| **Display Lyrics** | Show synchronized lyrics on the party dashboard alongside the QR code. When synced (LRC) lyrics are available, they scroll in time with the music. Hidden on mobile-sized screens in normal mode. |
 | **Karaoke Mode** | When enabled (requires Display Lyrics), lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. |
+| **Anti Burn-in** | Periodically swaps the position of UI elements every 10 minutes to prevent burn-in on OLED or plasma displays. In normal mode, the QR code and track list sides are swapped. With lyrics enabled, the QR code and lyrics swap positions. In karaoke mode, the QR code alternates between the top-left and top-right corners. Enabled by default. |
 
 ### QR Code Settings
 
@@ -100,7 +101,7 @@ Customize the colors of badges shown on guest-requested songs in the queue:
 
 ## User Interface
 
-### Party Mode Dashboard
+### Party Dashboard
 
 Access via `/party` in the Music Assistant interface. This view is designed for display on a TV or monitor at your party.
 
@@ -113,9 +114,10 @@ Access via `/party` in the Music Assistant interface. This view is designed for 
 - Optional player controls for the host
 - Optional synchronized lyrics display alongside the QR code
 - **Karaoke Mode** - A dedicated layout that puts lyrics front-and-center with the track stack minimized at the bottom and the QR code in the top-left corner. Great for sing-along parties!
+- **Anti Burn-in** - Automatically swaps UI element positions every 10 minutes to protect OLED and plasma displays
 - Access error display when the configured player is not available
 
-![Party Mode Dashboard with Boost](../../../assets/screenshots/party-mode/party-mode-dashboard-boost.png)
+![Party Dashboard with Boost](../../../assets/screenshots/party/party-dashboard-boost.png)
 
 ### Guest View (Mobile Interface)
 
@@ -133,9 +135,9 @@ Guests are automatically redirected here after scanning the QR code.
 - "Request" and "Boost" badges on songs they've added
 - **Skip button** - When enabled by the host, guests can skip the currently playing song. The button appears next to the "Current Queue" header with a token counter showing remaining skips. Once tokens are used, a countdown timer shows when the next skip becomes available
 
-![Guest View - Search](../../../assets/screenshots/party-mode/party-mode-guest-view-search.png)
+![Guest View - Search](../../../assets/screenshots/party/party-guest-view-search.png)
 
-![Guest View - Queue](../../../assets/screenshots/party-mode/party-mode-guest-view-queue.png)
+![Guest View - Queue](../../../assets/screenshots/party/party-guest-view-queue.png)
 
 ## Remote Access
 
@@ -149,13 +151,13 @@ When remote access is disabled, guests must be on the same network as your Music
 - The guest user shares a single "guest" account - individual guest tracking is not available
 - When the plugin is disabled or removed, all active guest sessions are immediately revoked
 - Rate limiting tokens are stored in the guest's browser - clearing browser data resets their limits
-- The Party Mode Dashboard works best on landscape displays; the guest view is optimized for portrait (mobile)
+- The Party Dashboard works best on landscape displays; the guest view is optimized for portrait (mobile)
 
 ## Tips for Hosting
 
-1. **Display the Party Mode Dashboard** - Use a spare tablet, TV, or monitor to show the QR code and queue
+1. **Display the Party Dashboard** - Use a spare tablet, TV, or monitor to show the QR code and queue
 2. **Pre-populate the queue** - Add some songs before guests arrive to set the mood
 3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
-4. **Use a dedicated player** - Configure a specific player for party mode to avoid conflicts with other rooms
+4. **Use a dedicated player** - Configure a specific player for party to avoid conflicts with other rooms
 5. **Enable remote access** - If some guests might be on cellular data, enable remote access so the QR code works for everyone
 6. **Enable Karaoke Mode** - For sing-along parties, turn on Display Lyrics and Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
