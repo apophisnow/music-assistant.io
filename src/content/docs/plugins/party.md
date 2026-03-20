@@ -51,6 +51,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 | **Karaoke Mode** | When enabled (requires Display Lyrics), lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. |
 | **Highlight Lyrics Ahead** | When enabled (requires Display Lyrics), the lyric line highlight transition finishes exactly when the line's timestamp arrives, giving a smooth anticipation effect. When disabled, the transition starts at the timestamp instead. Enabled by default. |
 | **Anti Burn-in** | Periodically swaps the position of UI elements every 10 minutes to prevent burn-in on OLED or plasma displays. In normal mode, the QR code and track list sides are swapped. With lyrics enabled, the QR code and lyrics swap positions. In karaoke mode, the QR code alternates between the top-left and top-right corners. Enabled by default. |
+| **Open in New Tab** | When enabled, clicking the Party menu item opens the dashboard in a new browser tab. When disabled (default), the dashboard opens within the current window in frameless mode (no navigation sidebar). |
 
 ### Rate Limiting (Advanced)
 
